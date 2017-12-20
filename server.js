@@ -2,11 +2,13 @@ var express = require('express')
 var mongoose = require("mongoose")
 var expressHandlebars = require("express-handlebars")
 var bodyParser = require('body-parser')
+
 var axios = require('axios')
 var PORT = process.env.PORT || 3000 
 var cheerio = require('cheerio')
-var router = express.Router()
 
+var router = express.Router()
+require("./config/routes")(router)
 
 app.engine("handlebars",expressHandlebars({
 	defaultLayout: "main"
